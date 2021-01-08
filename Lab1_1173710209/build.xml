@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Lab1_1173710209">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="D:/eclipse/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Lab1_1173710209.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/access-bridge-64.jar"/>
+        <pathelement location="lib/charsets.jar"/>
+        <pathelement location="lib/cldrdata.jar"/>
+        <pathelement location="lib/dnsns.jar"/>
+        <pathelement location="lib/jaccess.jar"/>
+        <pathelement location="lib/javax.json-1.0.jar"/>
+        <pathelement location="lib/jce.jar"/>
+        <pathelement location="lib/jfr.jar"/>
+        <pathelement location="lib/jfxrt.jar"/>
+        <pathelement location="lib/jsse.jar"/>
+        <pathelement location="lib/junit.jar"/>
+        <pathelement location="lib/localedata.jar"/>
+        <pathelement location="lib/nashorn.jar"/>
+        <pathelement location="lib/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+        <pathelement location="lib/resources.jar"/>
+        <pathelement location="lib/rt.jar"/>
+        <pathelement location="lib/sunec.jar"/>
+        <pathelement location="lib/sunjce_provider.jar"/>
+        <pathelement location="lib/sunmscapi.jar"/>
+        <pathelement location="lib/sunpkcs11.jar"/>
+        <pathelement location="lib/zipfs.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+                <exclude name="P2/"/>
+                <exclude name="P4/"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src/P2">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src/P4">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
+                <exclude name="**/*.java"/>
+                <exclude name="P4/"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test/P4">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="src/P2"/>
+            <src path="src/P4"/>
+            <src path="test"/>
+            <src path="test/P4"/>
+            <exclude name="P2/"/>
+            <exclude name="P4/"/>
+            <exclude name="P4/"/>
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Extract">
+        <java classname="twitter.Extract" failonerror="true" fork="yes">
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </java>
+    </target>
+    <target name="ExtractTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="twitter.ExtractTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </junit>
+    </target>
+    <target name="FilterTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="twitter.FilterTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </junit>
+    </target>
+    <target name="FriendshipGraph">
+        <java classname="P3.FriendshipGraph" failonerror="true" fork="yes">
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </java>
+    </target>
+    <target name="FriendshipGraphTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="P3.FriendshipGraphTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </junit>
+    </target>
+    <target name="MagicSquare">
+        <java classname="P1.MagicSquare" failonerror="true" fork="yes">
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </java>
+    </target>
+    <target name="SocialNetworkTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="twitter.SocialNetworkTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </junit>
+    </target>
+    <target name="TurtleSoup">
+        <java classname="turtle.TurtleSoup" failonerror="true" fork="yes">
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </java>
+    </target>
+    <target name="TurtleSoupTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="turtle.TurtleSoupTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="Lab1_1173710209.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

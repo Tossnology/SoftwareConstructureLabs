@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="P2/|P4/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/P2"/>
+	<classpathentry kind="src" path="src/P4"/>
+	<classpathentry excluding="P4/" kind="src" path="test"/>
+	<classpathentry kind="src" path="test/P4"/>
+	<classpathentry kind="lib" path="lib/access-bridge-64.jar"/>
+	<classpathentry kind="lib" path="lib/charsets.jar"/>
+	<classpathentry kind="lib" path="lib/cldrdata.jar"/>
+	<classpathentry kind="lib" path="lib/dnsns.jar"/>
+	<classpathentry kind="lib" path="lib/jaccess.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jce.jar"/>
+	<classpathentry kind="lib" path="lib/jfr.jar"/>
+	<classpathentry kind="lib" path="lib/jfxrt.jar"/>
+	<classpathentry kind="lib" path="lib/jsse.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
+	<classpathentry kind="lib" path="lib/localedata.jar"/>
+	<classpathentry kind="lib" path="lib/nashorn.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+	<classpathentry kind="lib" path="lib/resources.jar"/>
+	<classpathentry kind="lib" path="lib/rt.jar"/>
+	<classpathentry kind="lib" path="lib/sunec.jar"/>
+	<classpathentry kind="lib" path="lib/sunjce_provider.jar"/>
+	<classpathentry kind="lib" path="lib/sunmscapi.jar"/>
+	<classpathentry kind="lib" path="lib/sunpkcs11.jar"/>
+	<classpathentry kind="lib" path="lib/zipfs.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

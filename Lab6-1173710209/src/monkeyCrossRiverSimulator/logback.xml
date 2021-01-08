@@ -1,0 +1,16 @@
+<configuration>
+  　　<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+  　　　　<file>log/record.log</file>
+  　　　　<append>false</append>
+  　　　　<encoder>
+  　　　　　　<pattern>%msg%n</pattern>
+  　　　　</encoder>
+  　　</appender>
+
+  　　<root level="DEBUG">
+  　　　　<appender-ref ref="FILE" />
+  　　</root>
+      <logger name="src/Ladder" level="INFO">
+        <appender-ref ref="FILE"/>
+      </logger>
+</configuration>
